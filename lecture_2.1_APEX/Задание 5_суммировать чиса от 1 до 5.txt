@@ -1,0 +1,6 @@
+for (Integer count=1; count <=5; count++) {
+   sum = count++
+    System.debug('sum' + count);
+}
+
+что-то не то (((

@@ -1,0 +1,13 @@
+            Integer i=3,n=1;
+        while(i<=3)
+        {
+            System.debug(i);
+            while(n<=9)
+            {
+                n++;
+                System.debug(i*n);
+            }
+            i++;
+            n=1;
+            System.debug('');
+        }
