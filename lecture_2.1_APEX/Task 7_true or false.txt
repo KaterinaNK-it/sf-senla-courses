@@ -1,0 +1,29 @@
+Integer n1 = 1;
+Integer n2 = 2;
+Integer n3 = 3;
+Integer n4 = 2;
+
+System.debug(n1 == 1);
+System.debug(n2 == 3);
+System.debug(n1 >= 1 && n2 < 4);
+System.debug(n4 <= 99 && n3 < n4);
+System.debug(n2 >= n1 || n3 == n4);
+System.debug(n3 + n4< n2 || 3 - n2 >= n3);
+System.debug(!(n3 > n4));
+
+
+ОТВЕТ:
+System.debug(n1 == 1); - True - т.к. 1 равно 1
+
+System.debug(n2 == 3); - False - т.к. 2 не равно 3
+
+System.debug(n1 >= 1 && n2 < 4); - true и true - будет true
+
+System.debug(n4 <= 99 && n3 < n4); - true и  false будт false 
+
+System.debug(n2 >= n1 || n3 == n4); - false или false  будет false
+ 
+System.debug(n3 + n4< n2 || 3 - n2 >= n3); - false или true  будет false 
+
+System.debug(!(n3 > n4)); - 3 больше 2, но т.к. есть ! перед скобкой, то
+значение меняется на противоположное, поэтому это выражение false

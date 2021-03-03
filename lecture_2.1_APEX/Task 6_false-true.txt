@@ -1,0 +1,13 @@
+Boolean b1 = false;
+System.debug(b1);
+Boolean b2 = true;
+System.debug(b2);
+System.debug(b1 == b2);
+System.debug(b1 != b2);
+   
+   
+   Переменная b1 - ложь
+   Переменная b2 - истина
+   ложь не равна (не является) истиной
+   значения (ложь и истина) не истина, поэтому это истина/верно
+   
