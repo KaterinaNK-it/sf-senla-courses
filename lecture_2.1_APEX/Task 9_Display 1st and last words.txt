@@ -1,0 +1,5 @@
+String a = 'Hello';
+String b = 'my';
+String c = 'beautiful';
+String d = ' lady';
+    System.debug(a + d);
