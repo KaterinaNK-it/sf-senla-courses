@@ -1,0 +1,18 @@
+String testString = 'Hello my beautiful lady';
+List<String> strings = testString.split(' ');
+Map<Integer, Integer> countOfWordsByLength = new Map<Integer, Integer>();
+
+for (String word : strings) {
+    Integer lengthOfCurrentWord = word.length();
+    
+    if (countOfWordsByLength.keySet().contains(lengthOfCurrentWord)) {
+        countOfWordsByLength.put(lengthOfCurrentWord, countOfWordsByLength.get(lengthOfCurrentWord) + 1);
+    } else {
+        countOfWordsByLength.put(lengthOfCurrentWord, 1);
+    }
+}
+
+for (Integer length : countOfWordsByLength.keySet()) {
+    System.debug('Длина слова: ' + length);
+    System.debug('Количество слов с такой длиной: ' + countOfWordsByLength.get(length));
+}

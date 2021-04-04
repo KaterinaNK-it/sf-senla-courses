@@ -1,0 +1,32 @@
+String testString = 'Hello my beautiful lady. How are you?';
+
+Pattern nonAlphanumeric = Pattern.compile('[^a-zA-Z0-9\\s]');
+
+Matcher matcher = nonAlphanumeric.matcher(testString);
+
+List<String> strings = matcher.replaceAll('').split(' ');
+
+Map<Integer, List<String>> countOfWordsByLength = new Map<Integer, List<String>> ();
+
+for (String word : strings) {
+    Integer lengthOfCurrentWord = word.length();
+    
+if (countOfWordsByLength.keySet().contains(lengthOfCurrentWord)) {
+    
+List<String> tempList = new List<String>();
+    
+tempList.addAll(countOfWordsByLength.get(lengthOfCurrentWord));
+tempList.add(   word  );
+countOfWordsByLength.put(lengthOfCurrentWord, tempList);
+       
+} else {
+List<String> tempList = new List<String>();
+tempList.add(word);
+countOfWordsByLength.put(lengthOfCurrentWord, tempList);
+}
+}
+for (Integer length : countOfWordsByLength.keySet()) {
+    List<String> tempList = new List<String>();
+	tempList.addAll(countOfWordsByLength.get(length));
+    System.debug('Количество слов с такой (' + length + ' букв) длиной: ' + tempList.size());
+}
