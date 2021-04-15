@@ -1,0 +1,13 @@
+public class TouristManager {
+    public static void viewTourist () {
+        // Get the tourists //
+        List<Tourist> ListOfTourist = [SELECT Name, Age, FlightYear, FlightList, FlightDate
+        				FROM Tourist
+                                        WHERE Name = 'John'
+                                        AND Age = '20, 22, 24'
+                                        AND FlightYear = '2020'
+                                        AND FlightList = 'StartDate, FlightName'
+                                      	AND Status = 'NotRegistered'];
+                                           
+    }
+}
