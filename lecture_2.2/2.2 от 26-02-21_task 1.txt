@@ -1,13 +1,16 @@
 public class TouristManager {
     public static void viewTourist () {
-        // Get the tourists //
-        List<Tourist> ListOfTourist = [SELECT Name, Age, FlightYear, FlightList, FlightDate
-        				FROM Tourist
+        // View tourists list
+        List<Tourist__c> listOfTourists = [SELECT Name, Age, FlightYear, FlightList, FlightDate
+            FROM Tourist
                                         WHERE Name = 'John'
-                                        AND Age = '20, 22, 24'
+                                        AND (Age = '20' OR Age = '22'  OR Age = '24' )
                                         AND FlightYear = '2020'
                                         AND FlightList = 'StartDate, FlightName'
-                                      	AND Status = 'NotRegistered'];
-                                           
-    }
+                                       AND Status = 'NotRegistered'];
+        for (Tourist__c con : listOfTourists) {
+            String fullInfo = 'Name: ' + con.Name + ', Age : ' + con.Age + ', FlightYear: ' + con.FlightYear + ', FlightList: ' + con.FLightList + ', Status: ' + con.Status;
+            system.debug(fullInfo);
+        }                                      
+    } 
 }
